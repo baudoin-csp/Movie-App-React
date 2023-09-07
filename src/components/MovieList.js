@@ -7,7 +7,10 @@ const MovieList = ({ movies, favouriteComponent, handleFavouritesClick }) => {
       {movies.map((movie, index) => (
         <div className="image-container col" key={index}>
           <img src={movie.Poster} alt="movie"></img>
-          <div onClick={() => handleFavouritesClick(movie)} className="overlay d-flex justify-content-start m-3">
+          <div
+            onClick={() => handleFavouritesClick(movie)}
+            className="overlay d-flex justify-content-center align-items-center"
+          >
             <FavouriteComponent />
           </div>
         </div>
