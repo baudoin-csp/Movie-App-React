@@ -3,7 +3,7 @@ body {
   color: #ffffff;
 }
 
-.container{
+.container {
   display: flex;
 }
 
@@ -17,7 +17,7 @@ body {
   display: flex !important;
 }
 
-.image-container {
+/* .image-container {
   position: relative;
   transition: transform 0.2s;
 }
@@ -29,21 +29,20 @@ body {
 
 .image-container:hover .overlay {
   opacity: 1;
-}
+} */
 
 .overlay {
-	position: absolute;
-	background: rgba(0, 0, 0, 0.8);
-	width: 100%;
-	height: 20%; /* Adjust height to match the image's height */
-	transition: 0.5s ease;
-	opacity: 0;
-	bottom: 0px;
-	justify-content: center !important;
-	align-items: center;
-	text-align: center;
-  }
-  
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 20%; /* Adjust height to match the image's height */
+  transition: 0.5s ease;
+  opacity: 0;
+  bottom: 0px;
+  justify-content: center !important;
+  align-items: center;
+  text-align: center;
+}
 
 .add-favourite {
   display: flex;
@@ -52,4 +51,35 @@ body {
 
 .add-favourite svg {
   margin-left: 5px; /* Add space to the right of the text */
+}
+
+.movie-list-heading-logo {
+  width: 200px;
+  height: 67px;
+}
+
+.ant-layout-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.SearchButton {
+  border: 1px solid white;
+}
+
+.movie-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 21%;
+  overflow-x: auto;
+  overscroll-behavior: contain;
+  gap: 10px;
+}
+
+.image-container > img {
+  inline-size: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
 }
