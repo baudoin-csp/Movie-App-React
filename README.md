@@ -2,19 +2,21 @@
 
 This is a simple movie app built using React. The app allows users to search for movies, view their images, and add them to a list of favorites. Users can also remove movies from their favorites list.
 
+## Preview
+
+![preview](https://github.com/baudoin-csp/Movie-App-React/assets/118212739/397d0bc3-90a9-46c8-b903-b8cafa8cbcda)
+
 ## Table of Contents
 
 - [Demo](#demo)
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Demo
 
-You can see the live demo of this Movie App here: [Movie App Demo](https://movie-app-react-rho-henna.vercel.app/)
+You can see the live demo of Cinematica here: [Cinematica Demo](https://movie-app-react-rho-henna.vercel.app/)
 
 ## Features
 
