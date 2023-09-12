@@ -30,7 +30,7 @@ const WelcomeMessage = () => {
         Welcome to Cinematica
       </h1>
       <h3 style={italicStyle} className="welcome-message-description">
-        With Cinematica, you can easily discover and explore your favorite
+        With Cinematica, you can easily discover and explore your favourite
         movies.
       </h3>
       <div className="welcome-message-divider">
@@ -40,7 +40,7 @@ const WelcomeMessage = () => {
           bar, and we'll provide you with a list of matching results.
         </p>
         <div className="add-favourite-movie-section">
-          <p style={titleStyle}>Add to Your Favorites</p>
+          <p style={titleStyle}>Add to Your Favourites</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="30"
@@ -56,9 +56,9 @@ const WelcomeMessage = () => {
           </svg>
         </div>
         <p style={textStyle}>
-          Found a movie you love? Add it to your Favorites page to keep track of
-          your must-watch films. Your Favorites list is your personalized movie
-          library, ready for you to enjoy whenever you want.
+          Found a movie you love? Add it to your Favourites page to keep track
+          of your must-watch films. Your Favourites list is your personalized
+          movie library, ready for you to enjoy whenever you want.
         </p>
       </div>
     </div>

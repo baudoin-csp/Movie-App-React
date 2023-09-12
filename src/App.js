@@ -34,11 +34,16 @@ function App() {
   const [searchValue, setSearchValue] = useState("");
 
   const getMovieRequest = async (searchValue) => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=b7c390a`;
-    const response = await fetch(url);
-    const responseJson = await response.json();
-    if (responseJson.Search) {
-      setMovies(responseJson.Search);
+    if (searchValue !== "") {
+      console.log("search value: " + searchValue);
+      const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=b7c390a`;
+      const response = await fetch(url);
+      const responseJson = await response.json();
+      if (responseJson.Search) {
+        setMovies(responseJson.Search);
+      }
+    } else {
+      setMovies([]);
     }
   };
 
@@ -84,14 +89,20 @@ function App() {
             <SearchBox setSearchValue={setSearchValue} />
           </Header>
           <Content style={contentStyle}>
-            {movies.length===0 && favourites.length===0 && <WelcomeMessage/>}
-          {movies.length!==0 && <div className="movie-list-heading">Movies</div>}
+            {movies.length === 0 && favourites.length === 0 && (
+              <WelcomeMessage />
+            )}
+            {movies.length !== 0 && (
+              <div className="movie-list-heading">Movies</div>
+            )}
             <MovieList
               movies={movies}
               handleFavouritesClick={addFavouriteMovie}
               favouriteComponent={AddFavourite}
             />
-            {favourites.length!==0 && <div className="favourite-list-heading">Favourites</div>}
+            {favourites.length !== 0 && (
+              <div className="favourite-list-heading">Favourites</div>
+            )}
             <MovieList
               movies={favourites}
               handleFavouritesClick={removeFavouriteMovie}

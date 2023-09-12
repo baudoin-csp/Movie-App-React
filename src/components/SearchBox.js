@@ -10,15 +10,15 @@ const SearchBox = (props) => {
     textAlign: "start",
   };
 
-  const onSearch = function (value) {
-    props.setSearchValue(value);
+  const onSearch = function (e) {
+    props.setSearchValue(e.target.value);
   };
 
   return (
     <Search
       placeholder="Search films"
       allowClear
-      onSearch={onSearch}
+      onChange={onSearch}
       style={searchBoxStyle}
     />
   );
