@@ -9,16 +9,14 @@ const MovieList = ({ movies, favouriteComponent, handleFavouritesClick }) => {
           <img src={movie.Poster} alt="movie"></img>
           <div
             onClick={() => handleFavouritesClick(movie)}
-            className="favourite-btn"
+            className="overlay-favourite"
           >
-            
+            <FavouriteComponent />
           </div>
         </div>
       ))}
     </div>
   );
 };
-
-//<FavouriteComponent />
 
 export default MovieList;

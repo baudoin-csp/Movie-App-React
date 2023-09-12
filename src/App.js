@@ -8,6 +8,7 @@ import MovieListHeading from "./components/MovieListHeading";
 import SearchBox from "./components/SearchBox";
 import AddFavourite from "./components/AddFavourite";
 import RemoveFavourite from "./components/RemoveFavourite";
+import WelcomeMessage from "./components/WelcomeMessage";
 
 function App() {
   const { Header, Content } = Layout;
@@ -74,33 +75,6 @@ function App() {
     saveToLocalStorage(newFavourites);
   };
 
-  // return (
-  //   <div className="container-fluid movie-app">
-  //     <div className="row mt-4 mb-4">
-  //       <MovieListHeading heading="Movies" />
-  //       <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-  //     </div>
-  //     <div className="row">
-  //       <MovieList
-  //         movies={movies}
-  //         handleFavouritesClick={addFavouriteMovie}
-  //         favouriteComponent={AddFavourite}
-  //       />
-  //     </div>
-
-  //     <div className="row mt-4 mb-4">
-  //       <MovieListHeading heading="Favourites" />
-  //     </div>
-  //     <div className="row">
-  //       <MovieList
-  //         movies={favourites}
-  //         handleFavouritesClick={removeFavouriteMovie}
-  //         favouriteComponent={RemoveFavourite}
-  //       />
-  //     </div>
-  //   </div>
-  // );
-
   return (
     <>
       <Space direction="vertical" style={{ width: "100%" }} size={[0, 48]}>
@@ -110,10 +84,18 @@ function App() {
             <SearchBox setSearchValue={setSearchValue} />
           </Header>
           <Content style={contentStyle}>
+            {movies.length===0 && favourites.length===0 && <WelcomeMessage/>}
+          {movies.length!==0 && <div className="movie-list-heading">Movies</div>}
             <MovieList
               movies={movies}
               handleFavouritesClick={addFavouriteMovie}
               favouriteComponent={AddFavourite}
+            />
+            {favourites.length!==0 && <div className="favourite-list-heading">Favourites</div>}
+            <MovieList
+              movies={favourites}
+              handleFavouritesClick={removeFavouriteMovie}
+              favouriteComponent={RemoveFavourite}
             />
           </Content>
         </Layout>
